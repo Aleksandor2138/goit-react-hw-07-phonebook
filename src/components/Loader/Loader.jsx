@@ -8,7 +8,7 @@ export const Loader = () => {
                 strokeColor="grey"
                 strokeWidth="5"
                 animationDuration="0.75"
-                width="45"
+                width="35"
                 visible={true}
             />
         </div>

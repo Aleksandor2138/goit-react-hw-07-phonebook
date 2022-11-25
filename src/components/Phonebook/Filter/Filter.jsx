@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filterValue, getFilter } from '../../../redux/filterSlise';
+import { filterValue, selectFilter } from '../../../redux/filterSlise';
 // import PropTypes from 'prop-types';
 import { Input, Span } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
   const onChange = (event) => {
     dispatch(filterValue(event.target.value.toLowerCase()));
   }

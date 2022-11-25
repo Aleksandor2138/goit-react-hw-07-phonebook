@@ -1,8 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
-// import { nanoid } from 'nanoid';
-// import PropTypes from 'prop-types';
-import { getItem } from 'redux/contactsSlise';
+import { selectItem } from 'redux/contactsSlise';
 import {addContact} from 'redux/searchAPI'
 import { Span, Input, Button, Form } from './ContactForm.styled';
 
@@ -13,7 +11,7 @@ const BASE_STATE = {
 const ContactForm = () => {
   const [{ name, number }, setState] = useState(BASE_STATE);
   const dispatch = useDispatch();
-  const contacts = useSelector(getItem);
+  const contacts = useSelector(selectItem);
 
   function onChange(eve) {
     const { name, value } = eve.target;
@@ -22,7 +20,6 @@ const ContactForm = () => {
   const onSubmit = event => {
     event.preventDefault();
     const newContact = {
-      // id: nanoid(5),
       name,
       number,
     };

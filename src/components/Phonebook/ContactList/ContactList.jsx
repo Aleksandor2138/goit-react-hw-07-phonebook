@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
-import { getItem } from 'redux/contactsSlise';
+import { selectItem } from 'redux/contactsSlise';
 import { deleteContact } from 'redux/searchAPI';
-import { getFilter } from 'redux/filterSlise.js';
+import { selectFilter } from 'redux/filterSlise.js';
 import { NameContacts, List, Elements, Button } from './ContactList.styled';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getItem);
-  const filter = useSelector(getFilter);
+  const contacts = useSelector(selectItem);
+  const filter = useSelector(selectFilter);
   const delContacts = event => {
     dispatch(deleteContact(event.target.name));
   };

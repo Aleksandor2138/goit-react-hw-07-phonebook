@@ -1,14 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.section`
-  
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-family: 'Quicksand', sans-serif;
-
-  background-color: rgba(255, 216, 0, 0.9);
   color: white;
 `;
 
