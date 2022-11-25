@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 // import PropTypes from 'prop-types';
-import { newContacts, getItem } from '../../../redux/contactsSlise';
+import { getItem } from 'redux/contactsSlise';
+import {addContact} from 'redux/searchAPI'
 import { Span, Input, Button, Form } from './ContactForm.styled';
 
 const BASE_STATE = {
@@ -21,7 +22,7 @@ const ContactForm = () => {
   const onSubmit = event => {
     event.preventDefault();
     const newContact = {
-      id: nanoid(5),
+      // id: nanoid(5),
       name,
       number,
     };
@@ -29,7 +30,7 @@ const ContactForm = () => {
       alert(`${newContact.name} is already is contacts`);
       return;
     }
-    dispatch(newContacts(newContact));
+    dispatch(addContact(newContact));
     setState({ ...BASE_STATE });
   };
 
